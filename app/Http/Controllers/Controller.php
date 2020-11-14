@@ -6,16 +6,26 @@ use Laravel\Lumen\Routing\Controller as BaseController;
 
 class Controller extends BaseController
 {
-    public static $quotes = array("The Black Knight Always Triumphs! - Monty Python",
-        "Anyone who has never made a mistake has never tried anything new - Albert Einstein",
-        "Never Stop Exploring - The North Face",
-        "Be yourself; everyone else is already taken - Oscar Wilde",
-        "So many books, so little time - Frank Zappa",
-        "Be the change that you wish to see in the world - Mahatma Gandhi",
+    public static $quotes = array("https://xpn-games-00.s3.amazonaws.com/growth-mindset-quotes-albert-einstein.jpg",
+        "https://xpn-games-00.s3.amazonaws.com/growth-mindset-quotes-theodore-roosevelt.jpg",
+        "https://xpn-games-00.s3.amazonaws.com/growth-mindset-quotes-audrey-hepburn.jpg",
+        "https://xpn-games-00.s3.amazonaws.com/growth-mindset-quotes-dale-carnegie.jpg",
+        "https://xpn-games-00.s3.amazonaws.com/growth-mindset-quotes-jk-rowling.jpg",
+        "https://xpn-games-00.s3.amazonaws.com/growth-mindset-quotes-mark-twain.jpg",
+        "https://xpn-games-00.s3.amazonaws.com/growth-mindset-quotes-marva-collins.jpg",
+        "https://xpn-games-00.s3.amazonaws.com/growth-mindset-quotes-michael-jordan.jpg",
+        "https://xpn-games-00.s3.amazonaws.com/growth-mindset-quotes-niels-bohr.jpg",
+        "https://xpn-games-00.s3.amazonaws.com/growth-mindset-quotes-pele.jpg",
+        "https://xpn-games-00.s3.amazonaws.com/growth-mindset-quotes-ralph-waldo-emerson.jpg",
+        "https://xpn-games-00.s3.amazonaws.com/growth-mindset-quotes-samuel-johnson.jpg",
+        "https://xpn-games-00.s3.amazonaws.com/growth-mindset-quotes-shaquille-oneal.jpg",
+        "https://xpn-games-00.s3.amazonaws.com/growth-mindset-quotes-tony-robbins.jpg",
+        "https://xpn-games-00.s3.amazonaws.com/growth-mindset-quotes-lebron-james.jpg",
     );
 
     public function index()
     {
+        $idContainer = $_SERVER['SERVER_ADDR'];
         $totalQuotes = (count(Controller::$quotes));
         $randomNumber = (rand(0, ($totalQuotes - 1)));
         $randomQuote = Controller::$quotes[$randomNumber];
