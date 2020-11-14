@@ -25,9 +25,11 @@ class Controller extends BaseController
 
     public function index()
     {
-        $idContainer = $_SERVER['SERVER_ADDR'];
+        // $idContainer = $_SERVER['SERVER_ADDR'];
+        dd($_SERVER);
         $totalQuotes = (count(Controller::$quotes));
         $randomNumber = (rand(0, ($totalQuotes - 1)));
         $randomQuote = Controller::$quotes[$randomNumber];
-        return response()->json(['quote' => $randomQuote]);}
+        return view('image.index')->with("quote", $randomQuote);
+    }
 }
