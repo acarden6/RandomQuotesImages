@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <title>Random Quotes</title>
     <!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}" >
-    <link rel="stylesheet" type="text/css" href="{{asset('css/customStyle.css')}}"" >
+    <link rel="stylesheet" type="text/css" href="{{url('css/bootstrap.min.css')}}" >
+    <link rel="stylesheet" type="text/css" href="{{url('css/customStyle.css')}}"" >
 </head>
 
 <body>
@@ -16,9 +16,8 @@
             <div class="card">
                 <div class="card-header">Random Quotes Images</div>
                 <div class="card-body">
-                    <img src="{{$quote}}" alt="randomImage">
+                    <img src="{{$data['quote']}}" alt="randomImage">
                    <p class="card-text">
-                    {{$data['quote']}}
                     {{$data['ip']}}
                    </p>
                 </div>
