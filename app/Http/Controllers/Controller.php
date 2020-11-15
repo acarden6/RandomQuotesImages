@@ -26,10 +26,12 @@ class Controller extends BaseController
     public function index()
     {
         // $idContainer = $_SERVER['SERVER_ADDR'];
-        dd($_SERVER);
+        $data = [];
         $totalQuotes = (count(Controller::$quotes));
         $randomNumber = (rand(0, ($totalQuotes - 1)));
         $randomQuote = Controller::$quotes[$randomNumber];
-        return view('image.index')->with("quote", $randomQuote);
+        $data['quote'] = $randomQuote;
+        $data['ip'] = $_SERVER['SERVER_ADDR'];
+        return view('image.index')->with("data", $data);
     }
 }
