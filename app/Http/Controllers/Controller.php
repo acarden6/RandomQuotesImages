@@ -31,7 +31,10 @@ class Controller extends BaseController
         $randomNumber = (rand(0, ($totalQuotes - 1)));
         $randomQuote = Controller::$quotes[$randomNumber];
         $data['quote'] = $randomQuote;
-        $data['ip'] = $_SERVER['DB_HOST'];
+        if(request()->ip()){
+            $data['ip'] = request()->ip();
+        }
+
 
         return view('image.index')->with("data", $data);
     }
