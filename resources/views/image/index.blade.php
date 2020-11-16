@@ -18,7 +18,7 @@
                 <div class="card-body">
                     <img src="{{$data['quote']}}" alt="randomImage">
                    <p class="card-text">
-                    
+                    {{$data['ip']}}
                    </p>
                 </div>
             </div>
