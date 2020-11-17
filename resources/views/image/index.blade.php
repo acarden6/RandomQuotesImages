@@ -5,8 +5,9 @@
     <meta charset="utf-8">
     <title>Random Quotes</title>
     <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="{{url('css/customStyle.css')}}" >
     <link rel="stylesheet" type="text/css" href="{{url('css/bootstrap.min.css')}}" >
-    <link rel="stylesheet" type="text/css" href="{{url('css/customStyle.css')}}"" >
+
 </head>
 
 <body>
@@ -14,12 +15,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Random Quotes Images</div>
+                <b><div class="card-header">Random Quotes Images</div></b>
                 <div class="card-body">
-                    <img src="{{$data['quote']}}" alt="randomImage">
+                    <img class="img-fluid" src="{{$data['quote']}}" alt="randomImage">
                    <p class="card-text">
-                    {{$data['ip']}}
+                        {{$data['ip']}}
                    </p>
+                   <input class="button" type="button" value="Cambiar imagen" onClick="location.reload();" />
                 </div>
             </div>
         </div>
